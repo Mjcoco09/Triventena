@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navbar from "./components/Navbar/Navbar";
+import ProductHome from "./components/Product/ProductHome";
+import ProductDetails from "./components/Product/ProductDetails";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,11 +29,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Welcome!</h1>,
+        element: <ProductHome/>
       },
       {
         path: "/product/:id",
-        element: <h1>product details</h1>,
+        element: <ProductDetails/>,
       },
       {
         path: "/cart",
