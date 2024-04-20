@@ -1,0 +1,58 @@
+#sign-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sign-form h1 {
+  text-align: center;
+  color: #333;
+}
+
+#sign-form label {
+  display: block;
+  margin: 10px 0;
+  color: #555;
+}
+
+#sign-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* #sign-form p {
+  color: #5bc0de;
+  margin: 0;
+} */
+
+.signUp {
+  width: 100%;
+  padding: 10px;
+  background-color: #5bc0de;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signUp:disabled {
+  background-color: #8f8f8f;
+  color: #7f7f7f;
+  cursor: not-allowed;
+  padding: 10px;
+}
+
+/*
+#sign-form button:hover {
+
+  background-color: #31b0d5;
+} */
