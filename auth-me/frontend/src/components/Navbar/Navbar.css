@@ -1,0 +1,71 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: black;
+  align-items: center;
+  padding: 1.3rem 1rem;
+}
+
+.nav_logo h2 {
+  color: bisque;
+  font: 1.5rem;
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navLinks > li {
+  padding-left: 1.5rem;
+}
+
+.navLinks > li > a {
+  text-decoration: none;
+  color: bisque;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks > li > a > span {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.cart_Link {
+  background: rgb(126, 126, 126);
+  padding: 8px;
+  border-radius: 8px;
+}
+.cartCount{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-left: 8px;
+    color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.Menu{
+    width: 25px;
+    height:25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.Menu > div{
+    width: 100%;
+    height:3px;
+    background: white;
+}

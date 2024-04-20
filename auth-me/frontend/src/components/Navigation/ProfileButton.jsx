@@ -85,7 +85,7 @@ function ProfileButton({ user }) {
               />
             </li>
 
-            <li>
+            
               {/* <button
                 type="button"
                 onClick={handleDemoUser}
@@ -93,7 +93,7 @@ function ProfileButton({ user }) {
               >
                 Demo User
               </button> */}
-            </li>
+
           </>
         )}
       </ul>

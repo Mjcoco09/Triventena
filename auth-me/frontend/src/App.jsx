@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormModal/SignupFormModal";
-import Navigation from "./components/Navigation/Navigation"
 import * as sessionActions from "./store/session";
-
+import Navbar from "./components/Navbar/Navbar";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,7 +15,7 @@ function Layout() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navbar isLoaded={isLoaded} />
       {isLoaded && <Outlet />}
     </>
   );
@@ -31,7 +29,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <h1>Welcome!</h1>,
       },
-
+      {
+        path: "/product/:id",
+        element: <h1>product details</h1>,
+      },
+      {
+        path: "/cart",
+        element: <h1>Cart</h1>,
+      },
     ],
   },
 ]);
