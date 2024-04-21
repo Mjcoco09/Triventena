@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navbar from "./components/Navbar/Navbar";
 import ProductHome from "./components/Product/ProductHome";
 import ProductDetails from "./components/Product/ProductDetails";
+import CartDetails from "./components/Cart/CartDetails";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <h1>Cart</h1>,
+        element: <CartDetails/>,
       },
     ],
   },

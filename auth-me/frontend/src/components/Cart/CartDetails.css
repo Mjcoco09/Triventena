@@ -1,0 +1,44 @@
+.cartDetails{
+    display: flex;
+    max-width: 1200px;
+    margin-top: 2rem auto;
+}
+
+
+.cartDetails h2{
+    margin-bottom: 1rem;
+}
+
+.cartL{
+    flex:0.7;
+    margin-right: 1rem;
+    background-color: transparent;
+    padding: 1rem;
+}
+.cartR{
+    flex:0.3;
+    background-color: white;
+    height: fit-content;
+}
+
+.cartR div{
+    border-bottom: 1px solid;
+    padding: 1rem;
+
+}
+
+.cartR div:last-child{
+    border: none;
+}
+
+.cartInfo p {
+    padding: 6px;
+}
+.cartR div button {
+    padding: 10px 16px;
+    width: 100%;
+    background: black;
+    color: bisque;
+    border: 1px solid black;
+    cursor: pointer;
+}

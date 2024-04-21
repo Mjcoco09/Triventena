@@ -1,0 +1,28 @@
+.cartItem{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: 1fr,4fr,1fr,1fr,1fr;
+    gap:8px;
+    background-color: aliceblue;
+    border-radius:2px ;
+    place-items: center;
+}
+
+.cartName{
+    text-decoration: none;
+    color:black;
+
+}
+.cartSelect{
+    padding: 10px 16px;
+}
+.cartDelete{
+    color: red;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+
+}
