@@ -6,9 +6,7 @@ import { getProducts } from "../../store/product";
 const ProductHome = () => {
   const dispatch = useDispatch();
   const importProduct = useSelector((state) => state.getProducts);
-  if(importProduct){
-      console.log(importProduct)
-  }
+  const { products, loading, error } = importProduct;
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
@@ -17,11 +15,20 @@ const ProductHome = () => {
     <div className="homeScreen">
       <h2 className="homeTitle">All Products</h2>
       <div className="homeProducts">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {loading ? (<h2>Loading</h2>)
+        : error ? (
+          <h2>{error}</h2>
+        ) : (
+          products.map((product) => <Product
+          key={product.id}
+          productId={product.id}
+           name={product.name}
+           price={product.price}
+           description={product.description}
+           imageUrl={product.imageUrl}
+           />)
+        )
+        }
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import './Product.css'
-const Product = () => {
+const Product = ({imageUrl,name,price,description,productId}) => {
   return (
     <div className="product">
-      <img src="https://i.postimg.cc/0jhxJtbQ/Levi-Blue.png" alt="name" />
+      <img src={imageUrl} alt={name} />
       <div className="productInfo">
-        <p className="infoName">product</p>
-        <p className="infoDesc">my name is bennit and i aint innit</p>
-        <p className="infoPrice">$30</p>
-        <Link to={`/product/${12}`} className="infoButton">
+        <p className="infoName">{name}</p>
+        <p className="infoDesc">{description}</p>
+        <p className="infoPrice">${price}</p>
+        <Link to={`/product/${productId}`} className="infoButton">
           View
         </Link>
       </div>
