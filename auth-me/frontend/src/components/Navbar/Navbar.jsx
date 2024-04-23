@@ -29,11 +29,7 @@ const Navbar = ({ isLoaded }) => {
         </li>
       )}
       </ul>
-      <div className="Menu">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    
     </nav>
   );
 };

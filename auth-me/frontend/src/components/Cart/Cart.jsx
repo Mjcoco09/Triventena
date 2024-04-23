@@ -13,7 +13,7 @@ const Cart = ({ item, qtyChangeHandler, removeFromCart }) => {
       <select
         value={item.qty}
         onChange={(e) => qtyChangeHandler(item.product, e.target.value)}
-        className="cartItem__select"
+        className="cartSelect"
       >
         {[...Array(item.count).keys()].map((x) => (
           <option key={x + 1} value={x + 1}>
@@ -22,7 +22,7 @@ const Cart = ({ item, qtyChangeHandler, removeFromCart }) => {
         ))}
       </select>
       <button
-        className="cartItem__deleteBtn"
+        className="cartDelete"
         onClick={() => removeFromCart(item.product)}
       >
         <i className="fas fa-trash"></i>

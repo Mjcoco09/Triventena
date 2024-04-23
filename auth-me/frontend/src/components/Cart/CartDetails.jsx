@@ -22,7 +22,7 @@ const CartDetails = () => {
         <h2>Cart</h2>
         {cartItems.length === 0 ? (
           <div>
-            Empty <Link to="/">Back</Link>
+            Empty
           </div>
         ) : (
           cartItems.map((ele) => (

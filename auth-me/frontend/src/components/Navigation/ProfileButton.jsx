@@ -5,7 +5,7 @@ import * as sessionActions from "../../store/session";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import LoginFormModal from "../LoginFormModal/LoginFormModal";
 import SignupFormModal from "../SignupFormModal/SignupFormModal";
-
+import './ProfileButton.css'
 function ProfileButton({ user }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ function ProfileButton({ user }) {
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
-          <>
+          <div className="navLogin">
             <li>{user.username}</li>
             <li>
               {"Hello "}
@@ -67,7 +67,7 @@ function ProfileButton({ user }) {
             <li>
               <button onClick={logout}>Log Out</button>
             </li>
-          </>
+          </div>
         ) : (
           <>
             <li>
@@ -85,7 +85,7 @@ function ProfileButton({ user }) {
               />
             </li>
 
-            
+
               {/* <button
                 type="button"
                 onClick={handleDemoUser}
