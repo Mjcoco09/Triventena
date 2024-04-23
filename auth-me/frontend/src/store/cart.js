@@ -17,7 +17,7 @@ export const addCartThunk = (id, qty) => async (dispatch, getState) => {
   }
   const data = await res.json();
   const cartItem = {
-    product: data._id,
+    product: data.id,
     name: data.name,
     imageUrl: data.imageUrl,
     price: data.price,

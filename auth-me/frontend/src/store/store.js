@@ -10,6 +10,14 @@ const rootReducer = combineReducers({
   getProductDetails: getProductDetailsReducer,
 });
 
+const localCart = localStorage.getItem("cart")
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
+const INITIAL_STATE = {
+  cart: {
+    cartItems: localCart,
+  },
+};
 let enhancer;
 if (import.meta.env.MODE === "production") {
   enhancer = applyMiddleware(thunk);
@@ -19,7 +27,8 @@ if (import.meta.env.MODE === "production") {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }
-const configureStore = (preloadedState) => {
+
+const configureStore = (preloadedState = INITIAL_STATE) => {
   return createStore(rootReducer, preloadedState, enhancer);
 };
 
