@@ -43,7 +43,7 @@ module.exports = {
         description: "this is a sweater",
         price: 70,
         count: 100,
-        imageUrl: "https://ibb.co/26yxCV7",
+        imageUrl: "https://i.postimg.cc/gkKZQC5g/back-jpg.png",
       },
       {
         name: "levi sticker",
