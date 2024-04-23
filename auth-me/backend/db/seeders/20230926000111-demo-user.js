@@ -1,6 +1,6 @@
 "use strict";
 
-const { User, Product } = require("../models");
+const { User, Product,Review } = require("../models");
 const bcrypt = require("bcryptjs");
 
 let options = {};
@@ -67,9 +67,33 @@ module.exports = {
         imageUrl: "https://i.postimg.cc/pLHMb5jg/Killua-Pink.png",
       },
     ]);
+    await Review.bulkCreate([
+      {
+        productId: 1,
+        userId: 1,
+
+        review: "What a cool item",
+        stars: 4,
+      },
+      {
+        productId: 2,
+        userId: 2,
+
+        review: "Crazy how cheap these are ",
+        stars: 5,
+      },
+      {
+        productId: 3,
+        userId: 3,
+
+        review: "meh it was okay",
+        stars: 1,
+      },
+    ])
   },
 
   async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete("Reviews", null, {});
     await queryInterface.bulkDelete("Products", null, {});
     await queryInterface.bulkDelete("Users", null, {});
   },
