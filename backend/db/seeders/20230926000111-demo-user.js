@@ -48,7 +48,7 @@ module.exports = {
       {
         name: "levi sticker",
         description: "this is a levi sticker",
-        price: 10,
+        price: 100,
         count: 100,
         imageUrl: "https://i.postimg.cc/0jhxJtbQ/Levi-Blue.png",
       },
