@@ -15,15 +15,7 @@
     "start": "npm start --prefix backend",
     "build": "npm run --prefix backend build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mjcoco09/Triventena.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mjcoco09/Triventena/issues"
-  },
-  "homepage": "https://github.com/Mjcoco09/Triventena#readme"
+  "license": "ISC"
 }
