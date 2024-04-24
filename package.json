@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mjcoco09/authenticateMe.git"
+    "url": "git+https://github.com/Mjcoco09/Triventena.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mjcoco09/authenticateMe/issues"
+    "url": "https://github.com/Mjcoco09/Triventena/issues"
   },
-  "homepage": "https://github.com/Mjcoco09/authenticateMe#readme"
+  "homepage": "https://github.com/Mjcoco09/Triventena#readme"
 }
