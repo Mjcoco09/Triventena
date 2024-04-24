@@ -1,7 +1,6 @@
 import "./CartDetails.css";
 import Cart from "./Cart";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { addCartThunk, removeCart } from "../../store/cart";
 const CartDetails = () => {
   const dispatch = useDispatch();
