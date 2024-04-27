@@ -12,11 +12,7 @@ function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
-  const toggleMenu = (e) => {
-    e.stopPropagation(); // Keep from bubbling up to document and triggering closeMenu
-    setShowMenu(!showMenu);
-  };
-
+ 
   useEffect(() => {
     const closeMenu = (e) => {
       if (ulRef.current && !ulRef.current.contains(e.target)) {
