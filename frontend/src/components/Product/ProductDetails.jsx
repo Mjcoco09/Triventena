@@ -9,6 +9,7 @@ import { fetchReviews } from "../../store/review";
 import ReviewPage from "../Reviews/review";
 import PostReviewModal from "../Reviews/PostReview";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import DeleteReview from "../Reviews/DeleteReview";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const [qty, setQty] = useState(1);
@@ -16,7 +17,7 @@ const ProductDetails = () => {
   const productDetails = useSelector((state) => state.getProductDetails);
   const reviewState = useSelector((state) => state.review);
   const sessionState = useSelector((state) => state.session);
-  const reviewArr = reviewState && reviewState.reviews.Reviews;
+  const reviewArr = reviewState.reviews && reviewState.reviews.Reviews;
   let arrLength;
   const currentUser = sessionState.user;
   let userId;
@@ -30,9 +31,6 @@ const ProductDetails = () => {
     arrLength = reviewArr.length;
   }
 
-
-
-
   if (reviewArr) {
     const userReviewIds = reviewArr.map((review) => review.userId);
     userHasPostedReview = userReviewIds.includes(userId);
@@ -41,7 +39,7 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
-  }, [dispatch, id,arrLength]);
+  }, [dispatch, id, arrLength]);
   //   const handleSubmit = () => {
   //     dispatch(addCartThunk(product.id, qty));
   //     navigate("/cart");
@@ -99,13 +97,19 @@ const ProductDetails = () => {
         </>
       )}
       <div className="reviewPage">
-      <ReviewPage/>
+        <ReviewPage />
       </div>
       {currentUser && !userHasPostedReview && (
         <OpenModalButton
           className="postReview"
           buttonText="Post Your Reviews"
-          modalComponent={<PostReviewModal navigate={navigate} id={id}/>}
+          modalComponent={<PostReviewModal navigate={navigate} id={id} />}
+        />
+      )}
+      {currentUser && userHasPostedReview && (
+        <OpenModalButton
+          buttonText="Delete Review"
+          modalComponent={<DeleteReview navigate={navigate} />}
         />
       )}
     </div>
