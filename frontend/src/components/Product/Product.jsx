@@ -11,6 +11,7 @@ const Product = ({imageUrl,name,price,description,productId}) => {
         <Link to={`/product/${productId}`} className="infoButton">
           View
         </Link>
+        <br/>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
 import { useModal } from "../../context/Modal";
-
+import "./UpdateReview.css"
 function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
   const dispatch = useDispatch();
   const { closeModal } = useModal();

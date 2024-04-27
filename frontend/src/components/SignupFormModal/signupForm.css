@@ -1,37 +1,37 @@
-#sign-form {
-  background-color: #fff;
+.signupForm {
+  max-width: 400px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#sign-form h1 {
+.signupForm h1 {
+  font-size: 1.5rem;
   text-align: center;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-#sign-form label {
+.signupForm label {
   display: block;
-  margin: 10px 0;
-  color: #555;
+  margin-bottom: 10px;
 }
 
-#sign-form input {
+.signupForm input {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
-/* #sign-form p {
-  color: #5bc0de;
-  margin: 0;
-} */
+.signupForm p {
+  color: red;
+  margin-top: 5px;
+}
 
-.signUp {
+.signupForm button {
   width: 100%;
   padding: 10px;
   background-color: #5bc0de;
@@ -39,20 +39,8 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.signUp:disabled {
-  background-color: #8f8f8f;
-  color: #7f7f7f;
-  cursor: not-allowed;
-  padding: 10px;
 }
 
-/*
-#sign-form button:hover {
-
-  background-color: #31b0d5;
-} */
+.signupForm button:hover {
+  background-color: #3b97b3;
+}

@@ -60,6 +60,7 @@ const ProductDetails = () => {
     navigate("/cart");
   };
   return (
+    <div>
     <div className="productDetail">
       {loading ? (
         <h2>Loading...</h2>
@@ -106,9 +107,10 @@ const ProductDetails = () => {
           </div>
         </>
       )}
+      </div>
       <div className="reviewPage">
         <ReviewPage />
-      </div>
+
       {currentUser && !userHasPostedReview && (
         <OpenModalButton
           className="postReview"
@@ -118,6 +120,7 @@ const ProductDetails = () => {
       )}
       {currentUser && userHasPostedReview && (
         <OpenModalButton
+        className="deleteReview"
           buttonText="Delete Review"
           modalComponent={<DeleteReview navigate={navigate} />}
         />
@@ -125,6 +128,7 @@ const ProductDetails = () => {
 
       {currentUser && userHasPostedReview && currentUserReview && (
         <OpenModalButton
+        className="updateReview"
           buttonText="Update Review"
           modalComponent={
             <UpdateReviewModal
@@ -136,7 +140,10 @@ const ProductDetails = () => {
           }
         />
       )}
-    </div>
+</div>
+
+
+     </div>
   );
 };
 

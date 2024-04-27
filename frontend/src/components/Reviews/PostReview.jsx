@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { postReview } from "../../store/review";
 import { useModal } from "../../context/Modal";
 import "./postReview.css";
 
-function PostReviewModal({id}) {
+function PostReviewModal({ id }) {
   let createdReview;
   const dispatch = useDispatch();
   const { closeModal } = useModal();
@@ -25,7 +25,6 @@ function PostReviewModal({id}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
 
     const payload = {
       stars,
@@ -52,7 +51,6 @@ function PostReviewModal({id}) {
               value={review}
               onChange={updateText}
             />
-
           </label>
           <label>
             Stars:
@@ -64,9 +62,8 @@ function PostReviewModal({id}) {
               max={5}
             />
           </label>
-          <br/>
-              {/* {error.review && <p className="error">{error.review}</p>} */}
-              <br/>
+          <br />
+          <br />
           <button
             type="submit"
             className="submitButtonReview"
