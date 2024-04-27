@@ -3,11 +3,13 @@ import { thunk } from "redux-thunk";
 import sessionReducer from "./session";
 import { cartReducer } from "./cart";
 import { getProductsReducer, getProductDetailsReducer } from "./product";
+import reviewReducer from "./review"
 const rootReducer = combineReducers({
   session: sessionReducer,
   cart: cartReducer,
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
+  review:reviewReducer,
 });
 
 const localCart = localStorage.getItem("cart")
