@@ -6,7 +6,7 @@ import "./review.css";
 const ReviewPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const product = useSelector((state) => state.getProductDetails);
+
   const reviewState = useSelector((state) => state.review);
   const reviews = reviewState.reviews && reviewState.reviews.Reviews;
   const sessionState = useSelector((state) => state.session)
@@ -46,7 +46,7 @@ const ReviewPage = () => {
 
   return (
     <div className="review-container">
-{reviews.length === 0 && currentUser ? (
+{reviews.length === 0 && userId ? (
         <p className="review">Be the first to post a review!</p>
       ) : (
         <>

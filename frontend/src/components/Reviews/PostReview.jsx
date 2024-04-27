@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { postReview } from "../../store/review";
 import { useModal } from "../../context/Modal";
-import { useParams } from "react-router-dom";
 import "./postReview.css";
 
 function PostReviewModal({id}) {
   let createdReview;
   const dispatch = useDispatch();
   const { closeModal } = useModal();
-
-  //const sessionState = useSelector((state) => state.session.user);
-
-  // const userId = sessionState.user.id
 
   const [stars, setStar] = useState(1);
   const [review, setReviewText] = useState("");
@@ -40,7 +35,6 @@ function PostReviewModal({id}) {
 
     createdReview = await dispatch(postReview(payload, id));
     if (createdReview) {
-      // dispatch(fetchReviews(spotId));
       closeModal();
     }
   };
