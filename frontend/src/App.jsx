@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ProductHome from "./components/Product/ProductHome";
 import ProductDetails from "./components/Product/ProductDetails";
 import CartDetails from "./components/Cart/CartDetails";
+import Checkout from "./components/Cart/Checkout";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartDetails/>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout/>,
       },
     ],
   },

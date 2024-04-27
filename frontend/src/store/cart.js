@@ -3,6 +3,10 @@ export const ADD_CART = "ADD_TO_CART";
 export const DELETE_CART = "Delete_Cart";
 export const RESET_CART = "RESET_CART";
 
+export const resetCart = () => ({
+  type: RESET_CART,
+});
+
 const addToCartAction = (payload) => ({
   type: ADD_CART,
   payload,
@@ -39,6 +43,11 @@ export const removeCart = (id) => (dispatch, getState) => {
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
 
+export const clearCart = () => (dispatch) => {
+  dispatch(resetCart());
+  localStorage.removeItem("cart");
+};
+
 export const cartReducer = (state = { cartItems: [] }, action) => {
   switch (action.type) {
     case ADD_CART: {
@@ -69,6 +78,11 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
         ),
       };
 
+    case RESET_CART:
+      return {
+        ...state,
+        cartItems: [],
+      };
     default:
       return state;
   }
