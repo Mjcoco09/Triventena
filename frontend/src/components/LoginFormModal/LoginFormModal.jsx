@@ -14,8 +14,8 @@ function LoginFormModal() {
   const [buttonPressed, setButtonPressed] = useState(false);
   const handleDemoUser = () => {
     dispatch(sessionActions.login({
-      credential: "demouser@demo.com",
-      password: "demopassword",
+      credential: "demo@user.io",
+      password: "password",
     }))
     closeModal()
   };
@@ -25,7 +25,7 @@ function LoginFormModal() {
     if(buttonPressed){
     const newErr = {};
 
-    if (credential.length < 4) {  
+    if (credential.length < 4) {
       newErr.credential = "Username or Email must be greater than 4 characters";
     } else {
       newErr.credential = "";
