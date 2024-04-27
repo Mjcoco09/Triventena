@@ -103,6 +103,8 @@ router.post(
   }
 );
 
+
+//works
 router.get("/:productId/reviews", async (req, res, next) => {
   const productId = Number(req.params.productId);
   const isProduct = await Product.findByPk(productId);

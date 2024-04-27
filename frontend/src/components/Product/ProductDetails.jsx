@@ -6,40 +6,46 @@ import { getProductDetails } from "../../store/product";
 import { addCartThunk } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { fetchReviews } from "../../store/review";
-
+import ReviewPage from "../Reviews/review";
+import PostReviewModal from "../Reviews/PostReview";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.getProductDetails);
-  const { loading, error, product } = productDetails;
-  const { id } = useParams();
+  const reviewState = useSelector((state) => state.review);
   const sessionState = useSelector((state) => state.session);
+  const reviewArr = reviewState && reviewState.reviews.Reviews;
+  let arrLength;
   const currentUser = sessionState.user;
   let userId;
   if (currentUser) {
     userId = currentUser.id;
   }
   let userHasPostedReview;
-  const reviewState = useSelector((state) => state.review);
-  // let arrLength;
-  // if (reviewArr) {
-  //   arrLength = reviewArr.length;
-  // }
+  const { loading, error, product } = productDetails;
+  const { id } = useParams();
+  if (reviewArr) {
+    arrLength = reviewArr.length;
+  }
+
+
+
+
+  if (reviewArr) {
+    const userReviewIds = reviewArr.map((review) => review.userId);
+    userHasPostedReview = userReviewIds.includes(userId);
+  }
 
   useEffect(() => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
-  }, [dispatch, id]);
+  }, [dispatch, id,arrLength]);
   //   const handleSubmit = () => {
   //     dispatch(addCartThunk(product.id, qty));
   //     navigate("/cart");
   //   };
-
-  // if (reviewArr) {
-  //   const userReviewIds = reviewArr.map((review) => review.userId);
-  //   userHasPostedReview = userReviewIds.includes(userId);
-  // }
 
   const handleSubmit = async () => {
     await dispatch(addCartThunk(product.id, qty));
@@ -91,6 +97,16 @@ const ProductDetails = () => {
             </div>
           </div>
         </>
+      )}
+      <div className="reviewPage">
+      <ReviewPage/>
+      </div>
+      {currentUser && !userHasPostedReview && (
+        <OpenModalButton
+          className="postReview"
+          buttonText="Post Your Reviews"
+          modalComponent={<PostReviewModal navigate={navigate} id={id}/>}
+        />
       )}
     </div>
   );
