@@ -16,7 +16,7 @@ const Navbar = ({ isLoaded }) => {
             <i className="fas fa-shopping-cart"></i>
             <span>
             Cart
-            <span className="CartCount">0</span>
+            <span className="CartCount"></span>
             </span>
           </Link>
         </li>

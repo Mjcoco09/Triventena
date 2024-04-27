@@ -10,6 +10,7 @@ import ReviewPage from "../Reviews/review";
 import PostReviewModal from "../Reviews/PostReview";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import DeleteReview from "../Reviews/DeleteReview";
+import UpdateReviewModal from "../Reviews/UpdateReview";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const [qty, setQty] = useState(1);
@@ -18,6 +19,8 @@ const ProductDetails = () => {
   const reviewState = useSelector((state) => state.review);
   const sessionState = useSelector((state) => state.session);
   const reviewArr = reviewState.reviews && reviewState.reviews.Reviews;
+  let initialStars;
+  let initialReview;
   let arrLength;
   const currentUser = sessionState.user;
   let userId;
@@ -36,6 +39,13 @@ const ProductDetails = () => {
     userHasPostedReview = userReviewIds.includes(userId);
   }
 
+  const currentUserReview =
+    reviewArr && reviewArr.find((review) => review.userId === userId);
+  if (currentUserReview) {
+    initialStars = currentUserReview.stars;
+    initialReview = currentUserReview.review;
+  }
+  const reviewId = currentUserReview ? currentUserReview.id : null;
   useEffect(() => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
@@ -110,6 +120,20 @@ const ProductDetails = () => {
         <OpenModalButton
           buttonText="Delete Review"
           modalComponent={<DeleteReview navigate={navigate} />}
+        />
+      )}
+
+      {currentUser && userHasPostedReview && currentUserReview && (
+        <OpenModalButton
+          buttonText="Update Review"
+          modalComponent={
+            <UpdateReviewModal
+              navigate={navigate}
+              reviewId={reviewId}
+              initialStars={initialStars}
+              initialReview={initialReview}
+            />
+          }
         />
       )}
     </div>

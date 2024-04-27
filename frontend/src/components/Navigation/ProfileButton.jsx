@@ -38,23 +38,14 @@ function ProfileButton({ user }) {
     navigate("/");
     closeMenu();
   };
-  // const handleDemoUser = () => {
-  //   dispatch(sessionActions.login({
-  //     credential: "demouser@demo.com",
-  //     password: "demopassword",
-  //   }))
-  //     .then(closeMenu)
-  //     .catch((error) => {
-  //       console.error("Demo user login error:", error);
-  //     });
-  // };
+
   const ulClassName = `profile-dropdown ${showMenu ? "visible" : "hidden"}`;
 
   return (
     <>
-      <button onClick={toggleMenu}>
+      {/* <button onClick={toggleMenu}>
         <i className="fas fa-user-circle" />
-      </button>
+      </button> */}
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <div className="navLogin">
