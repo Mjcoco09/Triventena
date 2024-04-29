@@ -36,10 +36,10 @@ const DeleteReview = () => {
       <div className="deleteReviewDiv">
         <h3>Are you sure you want to delete this review?</h3>
         <button className="red" onClick={handleDelete}>
-          Yes(Delete Review)
+          Yes
         </button>
         <button className="grey" onClick={closeModal}>
-          No(Keep Review)
+          No
         </button>
       </div>
     </div>
