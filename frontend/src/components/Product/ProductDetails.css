@@ -1,82 +1,77 @@
-.infoL {
-  background: white;
-  font-size: 0.9rem;
-  height: fit-content;
-  margin: 1rem;
-  flex: 0.4;
-}
-
-.infoR {
-  background: white;
-  margin: 1rem;
-  width: 250px;
-}
-
-.imageL {
-  flex: 0.6;
-  margin: 1rem;
-}
-
-.left {
-  display: flex;
-  flex: 0.8;
-}
-
-.right {
-  flex: 0.2;
-}
-
-.productDetail {
+.productDetailsContainer {
   margin: 1rem auto;
   max-width: 1200px;
-  display: flex;
   border-bottom: 1px solid #ccc;
   padding-bottom: 1rem;
 }
 
-.nameL {
-  font-size: 1.3rem;
+.productDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.imageContainer {
+  flex: 0.4;
+  margin: 1rem;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.infoContainer {
+  flex: 0.6;
+  margin: 1rem;
+}
+
+.detailsBox {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.price {
   font-weight: bold;
 }
 
-.infoL > p,
-.infoR > p {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+.description {
+  margin-bottom: 1rem;
 }
 
-.infoL > p:last-child,
-.infoR > p:last-child {
-  border: none;
+.right select {
+  margin-bottom: 1rem;
 }
 
-.infoR > p > button {
+.right button {
   background-color: black;
   border: 1px solid black;
   color: bisque;
   cursor: pointer;
-  grid-column: 1 / -1;
   padding: 10px 16px;
 }
 
-.infoR p {
-  display: grid;
-  font-size: 0.8rem;
-  grid-template-columns: repeat(2, 1fr);
+.right button:hover {
+  background-color: #333;
+  border-color: #333;
 }
 
-.infoR select {
-  padding: 10px 16px;
-}
-
-
-.reviewPage {
+.reviewSection {
   margin-top: 1rem;
 }
 
-
-.postReview,
-.deleteReview,
-.updateReview {
+.reviewDetailsBox {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
   margin-top: 1rem;
+}
+
+.detailsBox {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }

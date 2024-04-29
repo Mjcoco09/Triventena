@@ -56,7 +56,7 @@ const ProductDetails = () => {
     navigate("/cart");
   };
   return (
-    <div>
+    <div  className="productDetailsContainer" >
       <div className="productDetail">
         {loading ? (
           <h2>Loading...</h2>
@@ -65,18 +65,20 @@ const ProductDetails = () => {
         ) : (
           <>
             <div className="left">
-              <div className="imageL">
+              <div className="imageContainer">
                 <img src={product.imageUrl} alt={product.name} />
               </div>
-              <dev className="infoL">
-                <p className="nameL">{product.name}</p>
-                <p className="priceL">Price:${product.price}</p>
-                <p className="descL">{product.description}</p>
-              </dev>
-            </div>
+
 
             <div className="right">
-              <div className="infoR">
+            <div className="detailsBox">
+              <div className="infoContainer">
+              <dev className="infoContainer">
+                <p className="name">{product.name}</p>
+                <p className="price">Price:${product.price}</p>
+                <p className="desc">{product.description}</p>
+              </dev>
+            </div>
                 <p>
                   Price: <span>${product.price}</span>
                 </p>
@@ -99,14 +101,16 @@ const ProductDetails = () => {
                     Add to cart
                   </button>
                 </p>
+                </div>
               </div>
             </div>
           </>
         )}
       </div>
-      <div className="reviewPage">
+      <div className="reviewSection">
+        <h2>Reviews</h2>
+        <div className="reviewDetailsBox">
         <ReviewPage />
-
         {currentUser && !userHasPostedReview && (
           <OpenModalButton
             className="postReview"
@@ -136,6 +140,7 @@ const ProductDetails = () => {
             }
           />
         )}
+        </div>
       </div>
     </div>
   );
