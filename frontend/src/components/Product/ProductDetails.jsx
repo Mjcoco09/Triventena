@@ -50,10 +50,6 @@ const ProductDetails = () => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
   }, [dispatch, id, arrLength]);
-  //   const handleSubmit = () => {
-  //     dispatch(addCartThunk(product.id, qty));
-  //     navigate("/cart");
-  //   };
 
   const handleSubmit = async () => {
     await dispatch(addCartThunk(product.id, qty));
@@ -61,89 +57,87 @@ const ProductDetails = () => {
   };
   return (
     <div>
-    <div className="productDetail">
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : error ? (
-        <h2>{error}</h2>
-      ) : (
-        <>
-          <div className="left">
-            <div className="imageL">
-              <img src={product.imageUrl} alt={product.name} />
+      <div className="productDetail">
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          <>
+            <div className="left">
+              <div className="imageL">
+                <img src={product.imageUrl} alt={product.name} />
+              </div>
+              <dev className="infoL">
+                <p className="nameL">{product.name}</p>
+                <p className="priceL">Price:${product.price}</p>
+                <p className="descL">{product.description}</p>
+              </dev>
             </div>
-            <dev className="infoL">
-              <p className="nameL">{product.name}</p>
-              <p className="priceL">Price:${product.price}</p>
-              <p className="descL">{product.description}</p>
-            </dev>
-          </div>
 
-          <div className="right">
-            <div className="infoR">
-              <p>
-                Price: <span>${product.price}</span>
-              </p>
-              <p>
-                status: <span>IN STOCK </span>
-              </p>
-              <p>
-                Quantity
-                <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                  {[...Array(product.count).keys()].map((ele) => (
-                    <option key={ele + 1} value={ele + 1}>
-                      {ele + 1}
-                    </option>
-                  ))}
-                </select>
-              </p>
-              <p>
-                <button type="button" onClick={handleSubmit}>
-                  {" "}
-                  Add to cart
-                </button>
-              </p>
+            <div className="right">
+              <div className="infoR">
+                <p>
+                  Price: <span>${product.price}</span>
+                </p>
+                <p>
+                  status: <span>IN STOCK </span>
+                </p>
+                <p>
+                  Quantity
+                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                    {[...Array(product.count).keys()].map((ele) => (
+                      <option key={ele + 1} value={ele + 1}>
+                        {ele + 1}
+                      </option>
+                    ))}
+                  </select>
+                </p>
+                <p>
+                  <button type="button" onClick={handleSubmit}>
+                    {" "}
+                    Add to cart
+                  </button>
+                </p>
+              </div>
             </div>
-          </div>
-        </>
-      )}
+          </>
+        )}
       </div>
       <div className="reviewPage">
         <ReviewPage />
 
-      {currentUser && !userHasPostedReview && (
-        <OpenModalButton
-          className="postReview"
-          buttonText="Post Your Reviews"
-          modalComponent={<PostReviewModal navigate={navigate} id={id} />}
-        />
-      )}
-      {currentUser && userHasPostedReview && (
-        <OpenModalButton
-        className="deleteReview"
-          buttonText="Delete Review"
-          modalComponent={<DeleteReview navigate={navigate} />}
-        />
-      )}
+        {currentUser && !userHasPostedReview && (
+          <OpenModalButton
+            className="postReview"
+            buttonText="Post Your Reviews"
+            modalComponent={<PostReviewModal navigate={navigate} id={id} />}
+          />
+        )}
+        {currentUser && userHasPostedReview && (
+          <OpenModalButton
+            className="deleteReview"
+            buttonText="Delete Review"
+            modalComponent={<DeleteReview navigate={navigate} />}
+          />
+        )}
 
-      {currentUser && userHasPostedReview && currentUserReview && (
-        <OpenModalButton
-        className="updateReview"
-          buttonText="Update Review"
-          modalComponent={
-            <UpdateReviewModal
-              navigate={navigate}
-              reviewId={reviewId}
-              initialStars={initialStars}
-              initialReview={initialReview}
-            />
-          }
-        />
-      )}
-</div>
-
-
-     </div>
+        {currentUser && userHasPostedReview && currentUserReview && (
+          <OpenModalButton
+            className="updateReview"
+            buttonText="Update Review"
+            modalComponent={
+              <UpdateReviewModal
+                navigate={navigate}
+                reviewId={reviewId}
+                initialStars={initialStars}
+                initialReview={initialReview}
+              />
+            }
+          />
+        )}
+      </div>
+    </div>
   );
 };
 

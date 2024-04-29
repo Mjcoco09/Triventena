@@ -7,10 +7,12 @@
   align-items: center;
 }
 
-.nav_logo h2 {
+.nav_logo {
+  text-decoration: none;
   color: bisque;
   font: 1.5rem;
   cursor: pointer;
+  list-style: none;
 }
 
 .navLinks {
@@ -38,7 +40,6 @@
 }
 
 .cart_Link {
-  background: rgb(126, 126, 126);
   padding: 8px;
   border-radius: 8px;
 }
@@ -71,4 +72,9 @@
   width: 100%;
   height: 3px;
   background: white;
+}
+
+.navbar .nav_logo .logo_link {
+  color: inherit;
+  text-decoration: none;
 }

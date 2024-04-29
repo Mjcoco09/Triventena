@@ -8,7 +8,7 @@ const Navbar = ({ isLoaded }) => {
   return (
     <nav className="navbar">
       <div className="nav_logo">
-        <h2>Triventena</h2>
+      <Link className="logo_link" to="/">Triventena</Link>
       </div>
       <ul className="navLinks">
         <li>
@@ -19,9 +19,6 @@ const Navbar = ({ isLoaded }) => {
             <span className="CartCount"></span>
             </span>
           </Link>
-        </li>
-        <li>
-          <Link to="/">Home</Link>
         </li>
         {isLoaded && (
         <li>

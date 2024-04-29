@@ -1,48 +1,40 @@
 .product {
-    padding: 1.5rem;
-    background: #f0f8ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 6px 10px;
-    display: flex;
-    width: 320px;
-  }
+  padding: 1.5rem;
+  background: #f0f8ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 6px 10px;
+  display: flex;
+  width: 320px;
+  text-decoration: none;
+}
 
-  .product > img {
-    height: 200px;
-    border-radius: 8px;
-  }
+.product > img {
+  height: 200px;
+  border-radius: 8px;
+}
 
-  .productInfo > p {
-    margin-bottom: 10px;
-  }
+.productInfo > p {
+  margin-bottom: 10px;
+  text-decoration: none;
+}
 
-  .infoPrice {
-    font-weight: bold;
-    color: #333;
-  }
+.infoPrice {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
 
-  .infoDesc {
-    font-size: 0.9rem;
-    color: #666;
-  }
+.infoDesc {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+}
 
-  .infoButton {
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: #333;
-    background-color: #ffe4c4;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-
-  .infoName {
-    overflow: hidden;
-    font-size: 1.1rem;
-    color: #222;
-  }
+.infoName {
+  overflow: hidden;
+  font-size: 1.1rem;
+  color: #222;
+  text-decoration: none;
+}
