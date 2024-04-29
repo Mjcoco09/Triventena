@@ -55,6 +55,18 @@ const ProductDetails = () => {
     await dispatch(addCartThunk(product.id, qty));
     navigate("/cart");
   };
+
+  if (loading || error) {
+    return (
+      <div className="productDetailsContainer">
+        {loading ? <h2>Loading...</h2> : <h2>NOT FOUND 404</h2>}
+      </div>
+    );
+  }
+
+  if (!product) {
+    return <h2>NOT FOUND 404</h2>
+  }
   return (
     <div  className="productDetailsContainer" >
       <div className="productDetail">
