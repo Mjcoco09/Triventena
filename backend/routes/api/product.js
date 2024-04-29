@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { requireAuth } = require("../../utils/auth");
-const { Product, Review,User } = require("../../db/models");
+const { Product, Review, User } = require("../../db/models");
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const validReview = [
@@ -15,29 +15,6 @@ const validReview = [
   handleValidationErrors,
 ];
 
-// const getAllProducts = async (req, res) => {
-//   try {
-//     const products = await Product.find({});
-//     res.json(products);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "server Error" });
-//   }
-// };
-// const getAllProducts = async (req, res) => {
-//   const products = await Product.find({});
-//     res.json(products);
-//   }
-// const getProductById = async (req, res) => {
-//   try {
-//     const products = await Product.findById(req.params.id);
-//     res.json(products);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "server Error" });
-//   }
-// };
-//get all products
 router.get("/", async (req, res, next) => {
   const query = {
     where: {},
@@ -102,7 +79,6 @@ router.post(
     return res.json(newReview);
   }
 );
-
 
 //works
 router.get("/:productId/reviews", async (req, res, next) => {
