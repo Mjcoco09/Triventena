@@ -65,10 +65,10 @@ const ProductDetails = () => {
   }
 
   if (!product) {
-    return <h2>NOT FOUND 404</h2>
+    return <h2>NOT FOUND 404</h2>;
   }
   return (
-    <div  className="productDetailsContainer" >
+    <div className="productDetailsContainer">
       <div className="productDetail">
         {loading ? (
           <h2>Loading...</h2>
@@ -81,38 +81,40 @@ const ProductDetails = () => {
                 <img src={product.imageUrl} alt={product.name} />
               </div>
 
-
-            <div className="right">
-            <div className="detailsBox">
-              <div className="infoContainer">
-              <dev className="infoContainer">
-                <p className="name">{product.name}</p>
-                <p className="price">Price:${product.price}</p>
-                <p className="desc">{product.description}</p>
-              </dev>
-            </div>
-                <p>
-                  Price: <span>${product.price}</span>
-                </p>
-                <p>
-                  status: <span>IN STOCK </span>
-                </p>
-                <p>
-                  Quantity
-                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                    {[...Array(product.count).keys()].map((ele) => (
-                      <option key={ele + 1} value={ele + 1}>
-                        {ele + 1}
-                      </option>
-                    ))}
-                  </select>
-                </p>
-                <p>
-                  <button type="button" onClick={handleSubmit}>
-                    {" "}
-                    Add to cart
-                  </button>
-                </p>
+              <div className="right">
+                <div className="detailsBox">
+                  <div className="infoContainer">
+                    <dev className="infoContainer">
+                      <p className="name">{product.name}</p>
+                      <p className="price">Price:${product.price}</p>
+                      <p className="desc">{product.description}</p>
+                    </dev>
+                  </div>
+                  <p>
+                    Price: <span>${product.price}</span>
+                  </p>
+                  <p>
+                    Status: <span>IN STOCK </span>
+                  </p>
+                  <p>
+                    Quantity
+                    <select
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                    >
+                      {[...Array(product.count).keys()].map((ele) => (
+                        <option key={ele + 1} value={ele + 1}>
+                          {ele + 1}
+                        </option>
+                      ))}
+                    </select>
+                  </p>
+                  <p>
+                    <button type="button" onClick={handleSubmit}>
+                      {" "}
+                      Add to cart
+                    </button>
+                  </p>
                 </div>
               </div>
             </div>
@@ -122,36 +124,84 @@ const ProductDetails = () => {
       <div className="reviewSection">
         <h2>Reviews</h2>
         <div className="reviewDetailsBox">
-        <ReviewPage />
-        {currentUser && !userHasPostedReview && (
-          <OpenModalButton
-            className="postReview"
-            buttonText="Post Your Reviews"
-            modalComponent={<PostReviewModal navigate={navigate} id={id} />}
-          />
-        )}
-        {currentUser && userHasPostedReview && (
-          <OpenModalButton
-            className="deleteReview"
-            buttonText="Delete Review"
-            modalComponent={<DeleteReview navigate={navigate} />}
-          />
-        )}
+          <div>
+          <ReviewPage
 
-        {currentUser && userHasPostedReview && currentUserReview && (
-          <OpenModalButton
-            className="updateReview"
-            buttonText="Update Review"
-            modalComponent={
-              <UpdateReviewModal
-                navigate={navigate}
-                reviewId={reviewId}
-                initialStars={initialStars}
-                initialReview={initialReview}
-              />
-            }
           />
-        )}
+          {currentUser && userHasPostedReview && (
+            <OpenModalButton
+              style={{
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                borderRadius: "8px",
+                padding: "0.75rem 1.5rem",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease-in-out",
+                marginRight:"0.5rem"
+              }}
+              className="deleteReview"
+              buttonText="Delete Review"
+              modalComponent={<DeleteReview navigate={navigate} />}
+            />
+          )}
+          </div>
+          {currentUser && !userHasPostedReview && (
+
+              <OpenModalButton
+                style={{
+                  backgroundColor: "#000000",
+                  color: "#ffffff",
+                  borderRadius: "8px",
+                  padding: "0.75rem 1.5rem",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s ease-in-out",
+                }}
+                className="postReview"
+                buttonText="Post Your Reviews"
+                modalComponent={<PostReviewModal navigate={navigate} id={id} />}
+              />
+
+          )}
+          {/* {currentUser && userHasPostedReview && (
+            <OpenModalButton
+              style={{
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                borderRadius: "8px",
+                padding: "0.75rem 1.5rem",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease-in-out",
+                marginRight:"0.5rem"
+              }}
+              className="deleteReview"
+              buttonText="Delete Review"
+              modalComponent={<DeleteReview navigate={navigate} />}
+            />
+          )} */}
+
+          {/* {currentUser && userHasPostedReview && currentUserReview && (
+            <OpenModalButton
+              style={{
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                borderRadius: "8px",
+                padding: "0.75rem 1.5rem",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease-in-out",
+
+              }}
+              className="updateReview"
+              buttonText="Update Review"
+              modalComponent={
+                <UpdateReviewModal
+                  navigate={navigate}
+                  reviewId={reviewId}
+                  initialStars={initialStars}
+                  initialReview={initialReview}
+                />
+              }
+            />
+          )} */}
         </div>
       </div>
     </div>

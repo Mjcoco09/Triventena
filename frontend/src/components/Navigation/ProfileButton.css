@@ -2,3 +2,13 @@
   color: white;
 }
 
+.logOut{
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.50rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}

@@ -42,7 +42,7 @@ function PostReviewModal({ id }) {
     <form onSubmit={handleSubmit}>
       <h2>What do you think of the product?</h2>
       <div className="overlay">
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <div className="modalIn" onClick={(e) => e.stopPropagation()}>
           <h1>Post Your Review</h1>
           <label>
             Review:

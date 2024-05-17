@@ -37,7 +37,7 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
     <form onSubmit={handleSubmit}>
       <h2>Edit Your Review</h2>
       <div className="overlay">
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <div className="modalIn" onClick={(e) => e.stopPropagation()}>
           <label>
             Review:
             <textarea
@@ -48,7 +48,7 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
             {error.review && <p className="error">{error.review}</p>}
           </label>
           <label>
-            Stars:
+            Stars: 
             <input
               type="number"
               value={stars}

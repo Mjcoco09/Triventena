@@ -50,7 +50,7 @@ const ReviewPage = () => {
         <p className="review">Be the first to post a review!</p>
       ) : (
         <>
-        <br/>
+
           {sortedReviews.map((review) => (
             <div key={review.id}>
               <p className="name">
@@ -68,7 +68,7 @@ const ReviewPage = () => {
               <br />
               <p className="review">{review.review}</p>
               <p className="review">stars:{review.stars}</p>
-              <br />
+              <hr className="review-separator" />
             </div>
           ))}
         </>

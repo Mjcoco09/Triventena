@@ -1,18 +1,11 @@
 
-  .modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-  }
 
-  .modal label {
+  .modalIn label {
     display: block;
     margin-bottom: 10px;
   }
 
-   .modal textarea {
+   .modalIn textarea {
     width: 100%;
     height: 100px;
     padding: 8px;
@@ -23,7 +16,7 @@
     resize: none;
   }
 
-  .modal input[type="number"] {
+  .modalIn input[type="number"] {
     width: 50px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -32,12 +25,12 @@
 
   }
 
-  .modal .error {
+  .modalIn .error {
     color: red;
     margin-top: 5px;
   }
 
-  .modal .submitButtonReview:disabled {
+  .modalIn .submitButtonReview:disabled {
     background-color: #8f8f8f;
     color: #7f7f7f;
     cursor: not-allowed;
@@ -52,7 +45,7 @@
 
   }
 
-  .modal .submitButtonReview {
+  .modalIn .submitButtonReview {
     background-color: #5bc0de;
     padding: 10px;
     width: 100%;

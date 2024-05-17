@@ -1,16 +1,17 @@
 /* TODO: Add sitewide styles */
-*{
-    padding:0 ;
-    box-sizing: border-box;
-    margin: 0;
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: bisque;
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #f5d7b4;;
 }
 
-img{
-    width: 100%;
-    object-fit: contain;
+img {
+  width: 100%;
+  object-fit: contain;
 }
+

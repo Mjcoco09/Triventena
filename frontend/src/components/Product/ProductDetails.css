@@ -61,17 +61,80 @@
 .reviewSection {
   margin-top: 1rem;
 }
-
+/*
 .reviewDetailsBox {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   padding: 1rem;
   margin-top: 1rem;
+} */
+
+.reviewDetailsBox {
+  background-color: #f5d7b4;
+  border: 1px solid #ffffff;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #204b57;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  transition: transform 0.2s ease-in-out;
+}
+
+.reviewDetailsBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reviewDetailsBox p {
+  margin: 0.75rem 0;
+}
+
+.reviewDetailsBox h2 {
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
 .detailsBox {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  padding: 1rem;
+  background-color: #f5d7b4;
+  border: 1px solid #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  transition: transform 0.2s ease-in-out;
+}
+
+.detailsBox:hover {
+  transform: translateY(
+    -5px
+  );
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.detailsBox p {
+  margin: 0.75rem 0;
+}
+
+.detailsBox h2 {
+  color: #000000;
   margin-bottom: 1rem;
+}
+
+.detailsBox button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.detailsBox button:hover {
+  background-color: #262626;
 }

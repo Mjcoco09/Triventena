@@ -5,14 +5,13 @@ import * as sessionActions from "../../store/session";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
 import LoginFormModal from "../LoginFormModal/LoginFormModal";
 import SignupFormModal from "../SignupFormModal/SignupFormModal";
-import './ProfileButton.css'
+import "./ProfileButton.css";
 function ProfileButton({ user }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
- 
   useEffect(() => {
     const closeMenu = (e) => {
       if (ulRef.current && !ulRef.current.contains(e.target)) {
@@ -52,14 +51,23 @@ function ProfileButton({ user }) {
             </li>
             <li>{user.email}</li>
             <li>
-              <button onClick={logout}>Log Out</button>
+              <button className="logOut" onClick={logout}>
+                Log Out
+              </button>
             </li>
           </div>
         ) : (
           <>
             <li>
               <OpenModalButton
-
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                  borderRadius: "8px",
+                  padding: "0.75rem 1.5rem",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s ease-in-out",
+                }}
                 buttonText="Log In"
                 onButtonClick={closeMenu}
                 modalComponent={<LoginFormModal />}
@@ -67,16 +75,19 @@ function ProfileButton({ user }) {
             </li>
             <li>
               <OpenModalButton
-
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#000000",
+                  borderRadius: "8px",
+                  padding: "0.75rem 1.5rem",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s ease-in-out",
+                }}
                 buttonText="Sign Up"
                 onButtonClick={closeMenu}
                 modalComponent={<SignupFormModal />}
               />
             </li>
-
-
-
-
           </>
         )}
       </ul>
