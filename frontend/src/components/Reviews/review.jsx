@@ -2,6 +2,7 @@ import { useEffect,useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "../../store/review";
+
 import "./review.css";
 const ReviewPage = () => {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ const ReviewPage = () => {
               <br />
               <p className="review">{review.review}</p>
               <p className="review">stars:{review.stars}</p>
+
               <hr className="review-separator" />
             </div>
           ))}

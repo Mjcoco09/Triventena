@@ -124,45 +124,24 @@ const ProductDetails = () => {
       <div className="reviewSection">
         <h2>Reviews</h2>
         <div className="reviewDetailsBox">
-          <div>
-          <ReviewPage
+          <ReviewPage/>
 
-          />
-          {currentUser && userHasPostedReview && (
-            <OpenModalButton
-              style={{
-                backgroundColor: "#000000",
-                color: "#ffffff",
-                borderRadius: "8px",
-                padding: "0.75rem 1.5rem",
-                cursor: "pointer",
-                transition: "background-color 0.2s ease-in-out",
-                marginRight:"0.5rem"
-              }}
-              className="deleteReview"
-              buttonText="Delete Review"
-              modalComponent={<DeleteReview navigate={navigate} />}
-            />
-          )}
-          </div>
           {currentUser && !userHasPostedReview && (
-
-              <OpenModalButton
-                style={{
-                  backgroundColor: "#000000",
-                  color: "#ffffff",
-                  borderRadius: "8px",
-                  padding: "0.75rem 1.5rem",
-                  cursor: "pointer",
-                  transition: "background-color 0.2s ease-in-out",
-                }}
-                className="postReview"
-                buttonText="Post Your Reviews"
-                modalComponent={<PostReviewModal navigate={navigate} id={id} />}
-              />
-
+            <OpenModalButton
+              style={{
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                borderRadius: "8px",
+                padding: "0.75rem 1.5rem",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease-in-out",
+              }}
+              className="postReview"
+              buttonText="Post Your Reviews"
+              modalComponent={<PostReviewModal navigate={navigate} id={id} />}
+            />
           )}
-          {/* {currentUser && userHasPostedReview && (
+           {currentUser && userHasPostedReview && (
             <OpenModalButton
               style={{
                 backgroundColor: "#000000",
@@ -177,9 +156,9 @@ const ProductDetails = () => {
               buttonText="Delete Review"
               modalComponent={<DeleteReview navigate={navigate} />}
             />
-          )} */}
+          )}
 
-          {/* {currentUser && userHasPostedReview && currentUserReview && (
+          {currentUser && userHasPostedReview && currentUserReview && (
             <OpenModalButton
               style={{
                 backgroundColor: "#000000",
@@ -201,7 +180,7 @@ const ProductDetails = () => {
                 />
               }
             />
-          )} */}
+          )}
         </div>
       </div>
     </div>
