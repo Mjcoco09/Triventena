@@ -86,14 +86,6 @@ module.exports = {
         imageUrl: "https://i.postimg.cc/MTbqrfRq/Designer-1.jpg",
       },
       {
-        name: "Enchanted Elixir",
-        description:
-          "Unlock the secrets of the mystical realm with Enchanted Elixir, a potion of boundless wonder and untold magic. Crafted by ancient alchemists and steeped in the essence of enchanted forests and starlit skies, each drop of this elixir is a gateway to realms unseen and dreams unimagined. With its beguiling blend of ethereal essences and arcane energies, Enchanted Elixir is more than just a drink – it's a portal to adventure, a conduit to enchantment, and a catalyst for wondrous possibilities. So imbibe deeply, and let the enchantment flow, for with Enchanted Elixir, the journey is as enchanting as the destination.",
-        price: 70,
-        count: 100,
-        imageUrl: "https://i.postimg.cc/qqTgNdcM/Designer.jpg",
-      },
-      {
         name: "Dreamcatcher Delight Tea",
         description:
           "Indulge in a moment of tranquility with Dreamcatcher Delight Tea, a soothing blend crafted to capture the essence of peaceful dreams and gentle serenity. Infused with the whispers of moonlit nights and the soft caress of gentle breezes, each sip of this enchanting tea envelops you in a cocoon of calm and tranquility. Let the delicate flavors of chamomile, lavender, and vanilla dance on your palate, soothing your senses and lulling you into a state of blissful relaxation. Whether enjoyed as a morning ritual or a nighttime indulgence, Dreamcatcher Delight Tea is your invitation to drift away on clouds of dreams and awaken refreshed, rejuvenated, and ready to embrace the day.",
@@ -103,21 +95,16 @@ module.exports = {
       },
       {
         name: "Sparkleberry Fizz",
-        description: "Get ready to experience a burst of joy with Sparkleberry Fizz, the sparkling sensation that's as effervescent as it is delightful! Infused with the essence of ripe, juicy berries and a touch of sparkling magic, each sip of Sparkleberry Fizz is a celebration in a bottle. Feel the fizzy bubbles dance on your tongue, tickling your taste buds with bursts of fruity flavor and effervescent effervescence. With its vibrant hues and sparkling charm, Sparkleberry Fizz is the perfect companion for any occasion, whether you're toasting to a special moment or simply adding a bit of sparkle to your day. So pop the cap, raise your glass, and let the sparkle begin with Sparkleberry Fizz",
+        description:
+          "Get ready to experience a burst of joy with Sparkleberry Fizz, the sparkling sensation that's as effervescent as it is delightful! Infused with the essence of ripe, juicy berries and a touch of sparkling magic, each sip of Sparkleberry Fizz is a celebration in a bottle. Feel the fizzy bubbles dance on your tongue, tickling your taste buds with bursts of fruity flavor and effervescent effervescence. With its vibrant hues and sparkling charm, Sparkleberry Fizz is the perfect companion for any occasion, whether you're toasting to a special moment or simply adding a bit of sparkle to your day. So pop the cap, raise your glass, and let the sparkle begin with Sparkleberry Fizz",
         price: 30,
         count: 100,
         imageUrl: "https://i.postimg.cc/nrP5dndn/Designer-4.jpg",
       },
       {
-        name: "Ethereal Elixir",
-        description: "Embark on a journey into the realm of magic with Mystic Moon Brew, a potion steeped in ancient mysticism and whispered enchantments. Crafted under the light of the mystical moon and infused with the essence of arcane ingredients, each sip of Mystic Moon Brew is a portal to realms unseen and secrets untold. Feel the tantalizing tingle of magic as it courses through your veins, awakening your senses to the wonders of the unknown. With its bewitching blend of ethereal flavors and mystical energies, Mystic Moon Brew is more than just a drink – it's a gateway to the realms of imagination, where dreams and reality intertwine. So uncork the bottle, embrace the magic within, and let the mysteries of the moonlight guide you on a journey of enchantment and discovery.",
-        price: 70,
-        count: 100,
-        imageUrl: "https://i.postimg.cc/VL2pnLrR/Designer-5.jpg",
-      },
-      {
         name: "Celestial Serenade Syrup",
-        description: "Embark on a celestial journey with Celestial Serenade Syrup, a magical elixir that transforms every moment into a celestial symphony of sweetness. Crafted under the watchful gaze of the stars and infused with the essence of cosmic harmony, each drop of this enchanting syrup is a melody for the senses",
+        description:
+          "Embark on a celestial journey with Celestial Serenade Syrup, a magical elixir that transforms every moment into a celestial symphony of sweetness. Crafted under the watchful gaze of the stars and infused with the essence of cosmic harmony, each drop of this enchanting syrup is a melody for the senses",
         price: 70,
         count: 100,
         imageUrl: "https://i.postimg.cc/rF2YwZvn/Designer-6.jpg",
@@ -131,21 +118,24 @@ module.exports = {
       },
       {
         name: "Aurora Shard",
-        description: "Unlock the secrets of the cosmos with the Oracle's Eye Amulet, a mystical artifact that holds the key to ancient wisdom and divine insight. Crafted by the hands of celestial artisans and imbued with the essence of cosmic magic, each Oracle's Eye Amulet is a conduit for divine guidance and mystical revelation. Wear it close to your heart and feel its power resonate within you, opening your eyes to the hidden truths that lie beyond the veil of reality. Whether you seek answers to life's mysteries or guidance on your spiritual journey, the Oracle's Eye Amulet is your faithful companion, guiding you with its all-seeing gaze and illuminating the path to enlightenment",
+        description:
+          "Unlock the secrets of the cosmos with the Oracle's Eye Amulet, a mystical artifact that holds the key to ancient wisdom and divine insight. Crafted by the hands of celestial artisans and imbued with the essence of cosmic magic, each Oracle's Eye Amulet is a conduit for divine guidance and mystical revelation. Wear it close to your heart and feel its power resonate within you, opening your eyes to the hidden truths that lie beyond the veil of reality. Whether you seek answers to life's mysteries or guidance on your spiritual journey, the Oracle's Eye Amulet is your faithful companion, guiding you with its all-seeing gaze and illuminating the path to enlightenment",
         price: 10,
         count: 100,
         imageUrl: "https://i.postimg.cc/xTWj8Q0r/Designer-8.jpg",
       },
       {
         name: "Soulstone Pendant",
-        description: "Unleash the power of the soul with the Soulstone Pendant, a mystical artifact adorned with celestial gemstones and ancient symbols. Said to contain the essence of the soul itself, this legendary pendant channels the energies of the cosmos, granting its wearer a connection to the realms beyond. Unlock the mysteries of existence and embark on a journey of spiritual enlightenment with the Soulstone Pendant as your guide.",
+        description:
+          "Unleash the power of the soul with the Soulstone Pendant, a mystical artifact adorned with celestial gemstones and ancient symbols. Said to contain the essence of the soul itself, this legendary pendant channels the energies of the cosmos, granting its wearer a connection to the realms beyond. Unlock the mysteries of existence and embark on a journey of spiritual enlightenment with the Soulstone Pendant as your guide.",
         price: 25,
         count: 100,
         imageUrl: "https://i.postimg.cc/qRb4TVm5/Designer-9.jpg",
       },
       {
         name: "Dreamweaver's Locket",
-        description: "Embark on a journey through the realms of dreams with the Dreamweaver's Locket, a magical talisman that holds the essence of dreams within its gleaming frame. As you wear this enchanting locket close to your heart, feel the whispers of imagination and the shimmering threads of dreams intertwining with your reality. Let the Dreamweaver's Locket be your portal to a world of limitless possibilities, where dreams take flight and wishes come true",
+        description:
+          "Embark on a journey through the realms of dreams with the Dreamweaver's Locket, a magical talisman that holds the essence of dreams within its gleaming frame. As you wear this enchanting locket close to your heart, feel the whispers of imagination and the shimmering threads of dreams intertwining with your reality. Let the Dreamweaver's Locket be your portal to a world of limitless possibilities, where dreams take flight and wishes come true",
         price: 80,
         count: 100,
         imageUrl: "https://i.postimg.cc/htcDTr7M/Designer-11.jpg",
