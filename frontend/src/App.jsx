@@ -7,7 +7,7 @@ import ProductHome from "./components/Product/ProductHome";
 import ProductDetails from "./components/Product/ProductDetails";
 import CartDetails from "./components/Cart/CartDetails";
 import Checkout from "./components/Cart/Checkout";
-
+import ThankYou from "./components/Cart/Thankyou";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout/>,
+      },
+      {
+        path: "/thank-you",
+        element: <ThankYou/>,
       },
     ],
   },

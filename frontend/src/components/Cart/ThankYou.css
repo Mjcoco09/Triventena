@@ -1,0 +1,19 @@
+.thank-you-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f5d7b4;;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+
+  .thank-you-container h2 {
+    font-size: 2rem;
+    color: #000000;
+  }
+
+  .thank-you-container p {
+    font-size: 1.2rem;
+    color: #000000;
+  }
