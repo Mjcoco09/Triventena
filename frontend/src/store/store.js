@@ -4,22 +4,31 @@ import sessionReducer from "./session";
 import { cartReducer } from "./cart";
 import { getProductsReducer, getProductDetailsReducer } from "./product";
 import reviewReducer from "./review"
+import wishlistReducer from "./wish"
 const rootReducer = combineReducers({
   session: sessionReducer,
   cart: cartReducer,
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
   review:reviewReducer,
+  wish: wishlistReducer,
 });
 
 const localCart = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
-const INITIAL_STATE = {
-  cart: {
-    cartItems: localCart,
-  },
-};
+  const localWish = localStorage.getItem("wish")
+  ? JSON.parse(localStorage.getItem("wish"))
+  : [];
+  const INITIAL_STATE = {
+    cart: {
+      cartItems: localCart,
+    },
+    wish: {
+      wishItems: localWish,
+    },
+  };
+
 let enhancer;
 if (import.meta.env.MODE === "production") {
   enhancer = applyMiddleware(thunk);

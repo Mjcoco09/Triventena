@@ -50,6 +50,10 @@ const router = createBrowserRouter([
         path: "/thank-you",
         element: <ThankYou/>,
       },
+      // {
+      //   path: "/wishList",
+      //   element: <gv/>,
+      // },
     ],
   },
 ]);

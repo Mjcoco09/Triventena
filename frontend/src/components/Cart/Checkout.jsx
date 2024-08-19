@@ -50,7 +50,7 @@ const Checkout = () => {
 
   const validateCardNumber = (number) => {
     const regex = new RegExp("^[0-9]{16}$");
-    if (!regex.test(number)) {
+    if (!regex.test(number)) {                                                                                                                                                                                                                                     
       return false;
     }
     return luhnCheck(number);
