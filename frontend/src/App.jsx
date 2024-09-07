@@ -8,6 +8,7 @@ import ProductDetails from "./components/Product/ProductDetails";
 import CartDetails from "./components/Cart/CartDetails";
 import Checkout from "./components/Cart/Checkout";
 import ThankYou from "./components/Cart/Thankyou";
+import Wishlist from "./components/Wish/Wish";
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -50,10 +51,10 @@ const router = createBrowserRouter([
         path: "/thank-you",
         element: <ThankYou/>,
       },
-      // {
-      //   path: "/wishList",
-      //   element: <gv/>,
-      // },
+      {
+        path: "/wishList",
+        element: <Wishlist/>,
+      },
     ],
   },
 ]);

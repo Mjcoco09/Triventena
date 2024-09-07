@@ -6,6 +6,7 @@ import { getProductDetails } from "../../store/product";
 import { addCartThunk } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { fetchReviews } from "../../store/review";
+import {addToWishThunk} from "../../store/wish";
 import ReviewPage from "../Reviews/review";
 import PostReviewModal from "../Reviews/PostReview";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -54,6 +55,11 @@ const ProductDetails = () => {
   const handleSubmit = async () => {
     await dispatch(addCartThunk(product.id, qty));
     navigate("/cart");
+  };
+
+  const handleAddToWishlist = async () => {
+    await dispatch(addToWishThunk(product.id));
+    alert(`${product.name} added to wishlist!`);
   };
 
   if (loading || error) {
@@ -113,6 +119,11 @@ const ProductDetails = () => {
                     <button type="button" onClick={handleSubmit}>
                       {" "}
                       Add to cart
+                    </button>
+                  </p>
+                  <p>
+                    <button type="button" onClick={handleAddToWishlist}>
+                      Add to Wishlist
                     </button>
                   </p>
                 </div>

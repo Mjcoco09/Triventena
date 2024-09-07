@@ -9,6 +9,8 @@ const Navbar = ({ isLoaded }) => {
     <nav className="navbar">
       <div className="nav_logo">
       <Link className="logo_link" to="/">Triventena</Link>
+      <br></br>
+      <Link className="logo_link" to="/wishList">Wishlist</Link>
       </div>
       <ul className="navLinks">
         <li>
@@ -16,7 +18,6 @@ const Navbar = ({ isLoaded }) => {
             <i className="fas fa-shopping-cart"></i>
             <span>
             Cart
-            <span className="CartCount"></span>
             </span>
           </Link>
         </li>

@@ -25,7 +25,7 @@ export const addToWishThunk = (id) => async (dispatch,getState) => {
       localStorage.setItem("wish", JSON.stringify(getState().cart.cartItems));
 }
 
-export const removeCart = (id) => (dispatch, getState) => {
+export const removeWish = (id) => (dispatch, getState) => {
     dispatch({
       type: DELETE_WISH,
       payload: id,
@@ -33,8 +33,10 @@ export const removeCart = (id) => (dispatch, getState) => {
 
     localStorage.setItem("wish", JSON.stringify(getState().cart.cartItems));
   };
-
-  export const wishlistReducer = (state = { wishItems: [] }, action) => {
+  const initialState = {
+    wishItems: [],
+  };
+  export const wishlistReducer = (state = initialState, action) => {
     switch (action.type) {
       case ADD_WISH: {
         const item = action.payload;
