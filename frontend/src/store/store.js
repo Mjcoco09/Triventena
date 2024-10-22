@@ -5,6 +5,7 @@ import { cartReducer } from "./cart";
 import { getProductsReducer, getProductDetailsReducer } from "./product";
 import reviewReducer from "./review"
 import wishlistReducer from "./wish"
+import recentlyViewedReducer from "./recent"
 const rootReducer = combineReducers({
   session: sessionReducer,
   cart: cartReducer,
@@ -12,22 +13,46 @@ const rootReducer = combineReducers({
   getProductDetails: getProductDetailsReducer,
   review:reviewReducer,
   wish: wishlistReducer,
+  recent: recentlyViewedReducer
 });
+
+// const localCart = localStorage.getItem("cart")
+//   ? JSON.parse(localStorage.getItem("cart"))
+//   : [];
+//   const localWish = localStorage.getItem("wish")
+//   ? JSON.parse(localStorage.getItem("wish"))
+//   : [];
+//   const INITIAL_STATE = {
+//     cart: {
+//       cartItems: localCart,
+//     },
+//     wish: {
+//       wishItems: localWish,
+//     },
+//   };
 
 const localCart = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
-  const localWish = localStorage.getItem("wish")
+const localWish = localStorage.getItem("wish")
   ? JSON.parse(localStorage.getItem("wish"))
   : [];
-  const INITIAL_STATE = {
-    cart: {
-      cartItems: localCart,
-    },
-    wish: {
-      wishItems: localWish,
-    },
-  };
+const localRecentlyViewed = localStorage.getItem("recentlyViewed")
+  ? JSON.parse(localStorage.getItem("recentlyViewed"))
+  : [];
+
+// Combine initial states
+const INITIAL_STATE = {
+  cart: {
+    cartItems: localCart,
+  },
+  wish: {
+    wishItems: localWish,
+  },
+  recent: {
+    recentlyViewedItems: localRecentlyViewed, // Add recently viewed initial state
+  },
+};
 
 let enhancer;
 if (import.meta.env.MODE === "production") {

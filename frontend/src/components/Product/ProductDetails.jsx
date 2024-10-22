@@ -7,6 +7,8 @@ import { addCartThunk } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { fetchReviews } from "../../store/review";
 import {addToWishThunk} from "../../store/wish";
+import { addRecentlyViewedThunk } from '../../store/recent';
+
 import ReviewPage from "../Reviews/review";
 import PostReviewModal from "../Reviews/PostReview";
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -50,6 +52,7 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
+    dispatch(addRecentlyViewedThunk(id))
   }, [dispatch, id, arrLength]);
 
   const handleSubmit = async () => {

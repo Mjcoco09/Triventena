@@ -9,6 +9,7 @@ import CartDetails from "./components/Cart/CartDetails";
 import Checkout from "./components/Cart/Checkout";
 import ThankYou from "./components/Cart/Thankyou";
 import Wishlist from "./components/Wish/Wish";
+import RecentlyViewedPage from "./components/Recent/Recent"
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/wishList",
         element: <Wishlist/>,
+      },
+      {
+        path: "/recents",
+        element: <RecentlyViewedPage/>,
       },
     ],
   },

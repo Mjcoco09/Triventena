@@ -1,0 +1,77 @@
+.recentlyViewedContainer {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recentlyViewedContainer h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.recentlyViewedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.recentlyViewedItem {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 200px;
+  height: 300px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recentlyViewedItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recentlyViewedItem img {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.recentlyViewedItem p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recentlyViewedItem p.price {
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+}
+
+.noItemsMessage {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.recentlyViewedItemLink {
+  text-decoration: none;
+  color: inherit;
+}

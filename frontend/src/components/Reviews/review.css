@@ -1,40 +1,58 @@
+/* Container for the review section */
+.review-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background for a soft, neutral look */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: none; /* Removed shadow */
+}
+
+/* Name of the reviewer */
 .name {
-    font-weight: bold;
-    color:black
-  }
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
 
-  .date {
-    font-style: italic;
-    color: #000000;
-  }
+/* Date of the review */
+.date {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
 
-  .review {
-    white-space: pre-line;
-    color:rgb(255, 255, 255)
-  }
+/* Main review text */
+.review {
+  white-space: pre-line;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
 
-  .review-separator {
-    border: none;
-    border-top: 2px solid #040000;
-    margin: 20px 0;
-  }
-/*
-broken
-  import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Reviews/review.css");import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from "/@vite/client"
-const __vite__id = "/home/it/Triventena/frontend/src/components/Reviews/review.css"
-const __vite__css = ""
-__vite__updateStyle(__vite__id, __vite__css)
-import.meta.hot.accept()
-export default __vite__css
-import.meta.hot.prune(() => __vite__removeStyle(__vite__id))
+/* Divider line between reviews */
+.review-separator {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 20px 0;
+}
 
---------------------------------------
-import {createHotContext as __vite__createHotContext} from "/@vite/client";
-import.meta.hot = __vite__createHotContext("/src/components/Reviews/review.css");
-import {updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle} from "/@vite/client"
-const __vite__id = "/home/it/Triventena/frontend/src/components/Reviews/review.css"
-const __vite__css = ".name {\r\n    font-weight: bold;\r\n    color:black\r\n  }\r\n\r\n  .date {\r\n    font-style: italic;\r\n    color: #000000;\r\n  }\r\n\r\n  .review {\r\n    white-space: pre-line;\r\n    color:rgb(249, 0, 0)\r\n  }\r\n\r\n  .review-separator {\r\n    border: none;\r\n    border-top: 2px solid #f9005f;\r\n    margin: 20px 0;\r\n  }\r\n"
-__vite__updateStyle(__vite__id, __vite__css)
-import.meta.hot.accept()
-export default __vite__css
-import.meta.hot.prune(()=>__vite__removeStyle(__vite__id)) */
+/* Loading message */
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Improved message for when there are no reviews */
+.noReviewsMessage {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  padding: 10px;
+  background-color: transparent; /* No background */
+  border-radius: 8px;
+}
