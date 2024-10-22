@@ -1,6 +1,6 @@
 
 
-import { csrfFetch } from "./csrf"; // Assuming you have a csrfFetch utility
+import { csrfFetch } from "./csrf";
 
 // Action Types
 export const ADD_RECENTLY_VIEWED = "ADD_RECENTLY_VIEWED";
@@ -12,10 +12,10 @@ const addRecentlyViewedAction = (payload) => ({
   payload,
 });
 
-const removeRecentlyViewedAction = (id) => ({
-  type: REMOVE_RECENTLY_VIEWED,
-  payload: id,
-});
+// const removeRecentlyViewedAction = (id) => ({
+//   type: REMOVE_RECENTLY_VIEWED,
+//   payload: id,
+// });
 
 // Thunks
 export const addRecentlyViewedThunk = (id) => async (dispatch, getState) => {
