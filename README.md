@@ -12,7 +12,7 @@ A full-stack eCommerce store built using Express.js and React.js, providing a se
 
 ### Backend:
 - Node.js with Express.js
-- MongoDB (or PostgreSQL if you're using it)
+- PostgreSQL
 
 ### Frontend:
 - React.js with Redux for state management
@@ -24,18 +24,16 @@ A full-stack eCommerce store built using Express.js and React.js, providing a se
 ### APIs:
 - RESTful API for interaction between frontend and backend
 
-### Others:
-- Docker (for containerization)
-- Stripe (for handling payments)
+
 
 ## Installation
 
 ### Prerequisites
 - Node.js and npm installed
-- Docker (optional, for containerization)
+
 
 ### Steps to Run Locally
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/ecommerce-store.git
+
