@@ -1,156 +1,83 @@
-/* .navbar {
-  padding: 1.3rem 1rem;
-  background-color: black;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav_logo {
-  text-decoration: none;
-  color: bisque;
-  font: 1.5rem;
-  cursor: pointer;
-  list-style: none;
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.navLinks > li {
-  padding-left: 1.5rem;
-}
-
-.navLinks > li > a {
-  text-decoration: none;
-  color: bisque;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.navLinks > li > a > span {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.cart_Link {
-  padding: 8px;
-  border-radius: 8px;
-}
-
-.cartCount {
-  width: 25px;
-  height: 25px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  margin-left: 8px;
-  color: cadetblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.Menu {
-  height: 25px;
-  width: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.Menu > div {
-  width: 100%;
-  height: 3px;
-  background: white;
-}
-
-.navbar .nav_logo .logo_link {
-  color: inherit;
-  text-decoration: none;
-} */
+/* Navbar container */
 .navbar {
   padding: 1.3rem 1rem;
-  background-color: black;
+  background-color: #000; /* Black background */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo link */
 .nav_logo {
   text-decoration: none;
-  color: bisque;
+  color: #fff; /* White color for logo text */
   font-size: 1.5rem;
   cursor: pointer;
   list-style: none;
 }
 
+/* Navigation links container */
 .navLinks {
   display: flex;
   align-items: center;
   list-style: none;
 }
 
+/* Style each link item */
 .navLinks > li {
   padding-left: 1.5rem;
 }
 
+/* Style the individual links */
 .navLinks > li > a {
   text-decoration: none;
-  color: bisque;
+  color: #fff; /* White color for links */
   font-size: 1rem;
   display: flex;
   align-items: center;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Added: Hover effect for all nav links */
+/* Hover effect for nav links */
 .navLinks > li > a:hover {
-  color: #ffcd3c; /* Light yellow color on hover */
-  transform: translateY(-2px); /* Small lift effect */
+  color: #6c6c6c; /* Zara-style light yellow color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* For any nested span inside nav links */
 .navLinks > li > a > span {
   display: flex;
   align-items: center;
   margin-left: 10px;
 }
 
-/* Existing: Styling for Wishlist Link */
+/* Styling for Wishlist Link */
 .wishlist_Link {
   padding: 8px;
   border-radius: 8px;
 }
 
-/* Added: Styling for Recently Viewed Link */
+/* Styling for Recently Viewed Link */
 .recentlyViewed_Link {
   padding: 8px;
   border-radius: 8px;
 }
 
-/* Existing: Styling for Cart Link */
+/* Styling for Cart Link */
 .cart_Link {
   padding: 8px;
   border-radius: 8px;
 }
 
+/* Cart count styling */
 .cartCount {
   width: 25px;
   height: 25px;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff; /* White background for cart count */
   border-radius: 50%;
   margin-left: 8px;
-  color: cadetblue;
+  color: #333; /* Dark color for text */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,15 +85,15 @@
   font-size: 1rem;
 }
 
-/* Keep the logo link color consistent */
+/* Logo link color consistency */
 .navbar .nav_logo .logo_link {
   color: inherit;
   text-decoration: none;
 }
 
-/* Added: Icons styling to ensure proper spacing */
+/* Icon styling for the links */
 .wishlist_Link i,
-.recentlyViewed_Link i, /* Added for Recently Viewed Icon */
+.recentlyViewed_Link i, /* Recently Viewed Icon */
 .cart_Link i {
   margin-right: 5px;
   font-size: 1.2rem;

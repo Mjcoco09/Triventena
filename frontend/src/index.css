@@ -1,17 +1,235 @@
-/* TODO: Add sitewide styles */
+/* Global Reset and Basic Styles */
 * {
   padding: 0;
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: #f5d7b4;;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333; /* Neutral text color */
+  background-color: #ffffff; /* Clean white background */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #000; /* Subtle hover effect for links */
 }
 
 img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
+/* Layout Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600; /* Bold headings */
+  color: #000;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Buttons */
+button {
+  background-color: #000 !important;
+  border: 1px solid #000 !important;
+  color: #fff !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  border-radius: 5px !important;
+}
+
+button:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+body {
+  font-family: "Montserrat", sans-serif; /* Zara-style font */
+  font-size: 16px;
+  line-height: 1.6; /* Readable line height */
+  color: #333; /* Standard text color */
+}
+
+/* Optional: Apply a different font for headings */
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif; /* Maintain consistency for headers */
+  font-weight: 600; /* Semi-bold for a clean look */
+}
+
+/* Navbar */
+.navbar {
+  padding: 1.3rem 1rem;
+  background-color: #000; /* Black background for navbar */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo {
+  text-decoration: none;
+  color: #fff; /* White text for logo */
+  font-size: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navLinks > li {
+  padding-left: 1.5rem;
+}
+
+.navLinks > li > a {
+  text-decoration: none;
+  color: #fff; /* White text for nav links */
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for all nav links */
+.navLinks > li > a:hover {
+  color: #7b7b7b; /* Light yellow color on hover */
+  transform: translateY(-2px); /* Small lift effect */
+}
+
+.navLinks > li > a > span {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.wishlist_Link {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.recentlyViewed_Link {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.cart_Link {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.cartCount {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 255, 255); /* White background for count */
+  border-radius: 50%;
+  margin-left: 8px;
+  color: #000; /* Black text for count */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.navbar .nav_logo .logo_link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wishlist_Link i,
+.recentlyViewed_Link i,
+.cart_Link i {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+/* Global media query for screens smaller than 768px (typically tablets and phones) */
+@media only screen and (max-width: 768px) {
+  /* Global styles for all buttons */
+  button {
+    padding: 0.5rem 1rem; /* Adjust button padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically on smaller screens */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .nav_logo {
+    font-size: 1.2rem; /* Reduce logo size */
+  }
+
+  .navLinks {
+    flex-direction: column; /* Stack the navigation links vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .navLinks > li {
+    padding-left: 0; /* Remove padding for smaller screens */
+    padding-bottom: 1rem; /* Add space between links */
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 15px 0; /* Reduce footer padding */
+  }
+
+  /* Make text smaller for better readability on mobile */
+  p {
+    font-size: 0.9rem;
+  }
+
+  /* Additional media query adjustments as needed for other elements */
+  .container {
+    padding: 0 10px; /* Reduce container padding */
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.2rem; /* Reduce heading size on mobile */
+  }
+}

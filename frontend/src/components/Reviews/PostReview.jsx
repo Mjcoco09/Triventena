@@ -1,28 +1,46 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { postReview } from "../../store/review";
 import { useModal } from "../../context/Modal";
 import "./postReview.css";
 
 function PostReviewModal({ id }) {
-  let createdReview;
   const dispatch = useDispatch();
   const { closeModal } = useModal();
 
-  const [stars, setStar] = useState(1);
+  const [stars, setStars] = useState(1);
   const [review, setReviewText] = useState("");
   const [error, setError] = useState({});
-  const updateStar = (e) => setStar(e.target.value);
-  const updateText = (e) => setReviewText(e.target.value);
+
+  const modalRef = useRef();  // Reference to the modal container
+
+  // const handleStarsChange = (e) => setStars(Number(e.target.value));
+  const handleReviewChange = (e) => setReviewText(e.target.value);
+
+  // Close modal if clicked outside of the modal container
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeModal]);
 
   useEffect(() => {
     const newErr = {};
     if (review.length < 10) {
-      newErr.review = "Please provide at least 10 letters ";
+      newErr.review = "Please provide at least 10 characters.";
     }
     setError(newErr);
   }, [review]);
 
+  // Submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,11 +48,11 @@ function PostReviewModal({ id }) {
       stars,
       review,
     };
-    closeModal;
 
-    createdReview = await dispatch(postReview(payload, id));
+    const createdReview = await dispatch(postReview(payload, id));
+
     if (createdReview) {
-      closeModal();
+      closeModal(); // Close the modal after the review is successfully posted
     }
   };
 
@@ -42,28 +60,41 @@ function PostReviewModal({ id }) {
     <form onSubmit={handleSubmit}>
       <h2>What do you think of the product?</h2>
       <div className="overlay">
-        <div className="modalIn" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="modalIn"
+          ref={modalRef}
+          onClick={(e) => e.stopPropagation()}
+        >
           <h1>Post Your Review</h1>
+
+          {/* Review input */}
           <label>
             Review:
             <input
-              placeholder="Leave your Review here"
+              placeholder="Leave your review here"
               value={review}
-              onChange={updateText}
+              onChange={handleReviewChange}
             />
           </label>
+
+          {/* Stars rating input */}
           <label>
             Stars:
-            <input
-              type="number"
-              value={stars}
-              onChange={updateStar}
-              min={1}
-              max={5}
-            />
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((starValue) => (
+                <span
+                  key={starValue}
+                  className={`star ${starValue <= stars ? "filled" : ""}`}
+                  onClick={() => setStars(starValue)}
+                >
+                  &#9733;
+                </span>
+              ))}
+            </div>
           </label>
-          <br />
-          <br />
+          {error.review && <p className="error">{error.review}</p>}
+
+          {/* Submit button */}
           <button
             type="submit"
             className="submitButtonReview"

@@ -6,8 +6,8 @@ import { getProductDetails } from "../../store/product";
 import { addCartThunk } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { fetchReviews } from "../../store/review";
-import {addToWishThunk} from "../../store/wish";
-import { addRecentlyViewedThunk } from '../../store/recent';
+import { addToWishThunk } from "../../store/wish";
+import { addRecentlyViewedThunk } from "../../store/recent";
 
 import ReviewPage from "../Reviews/review";
 import PostReviewModal from "../Reviews/PostReview";
@@ -52,7 +52,7 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(getProductDetails(id));
     dispatch(fetchReviews(id));
-    dispatch(addRecentlyViewedThunk(id))
+    dispatch(addRecentlyViewedThunk(id));
   }, [dispatch, id, arrLength]);
 
   const handleSubmit = async () => {
@@ -92,13 +92,8 @@ const ProductDetails = () => {
 
               <div className="right">
                 <div className="detailsBox">
-                  <div className="infoContainer">
-                    <dev className="infoContainer">
-                      <p className="name">{product.name}</p>
-                      <p className="price">Price:${product.price}</p>
-                      <p className="desc">{product.description}</p>
-                    </dev>
-                  </div>
+                  <p className="name">{product.name}</p>
+                  <p className="desc">{product.description}</p>
                   <p>
                     Price: <span>${product.price}</span>
                   </p>
@@ -138,7 +133,7 @@ const ProductDetails = () => {
       <div className="reviewSection">
         <h2>Reviews</h2>
         <div className="reviewDetailsBox">
-          <ReviewPage/>
+          <ReviewPage />
 
           {currentUser && !userHasPostedReview && (
             <OpenModalButton
@@ -155,7 +150,7 @@ const ProductDetails = () => {
               modalComponent={<PostReviewModal navigate={navigate} id={id} />}
             />
           )}
-           {currentUser && userHasPostedReview && (
+          {currentUser && userHasPostedReview && (
             <OpenModalButton
               style={{
                 backgroundColor: "#000000",
@@ -164,7 +159,7 @@ const ProductDetails = () => {
                 padding: "0.75rem 1.5rem",
                 cursor: "pointer",
                 transition: "background-color 0.2s ease-in-out",
-                marginRight:"0.5rem"
+                marginRight: "0.5rem",
               }}
               className="deleteReview"
               buttonText="Delete Review"
@@ -181,7 +176,6 @@ const ProductDetails = () => {
                 padding: "0.75rem 1.5rem",
                 cursor: "pointer",
                 transition: "background-color 0.2s ease-in-out",
-
               }}
               className="updateReview"
               buttonText="Update Review"

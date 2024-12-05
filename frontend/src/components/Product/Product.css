@@ -1,42 +1,81 @@
+/* Product Card */
 .product {
-  padding: 1.5rem;
-  background: #f0f8ff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 6px 10px;
   display: flex;
-  width: 320px;
-  text-decoration: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  border: 1px solid #eaeaea; /* Subtle border for structure */
+  margin: 10px;
+  width: 100%; /* Ensure responsiveness */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.product:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Product Image */
 .product > img {
-  height: 200px;
+  height: 250px;
+  width: 100%; /* Make sure it stretches across the container */
+  object-fit: cover; /* Ensure consistent image proportions */
   border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-.productInfo > p {
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.infoPrice {
-  font-weight: bold;
-  color: #000000;
-  text-decoration: none;
-}
-
-.infoDesc {
-  font-size: 0.9rem;
-  color: #666;
-  text-decoration: none;
+/* Product Info */
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0; /* Added some padding to space out the info */
+  text-align: center; /* Ensure text is centered for uniformity */
 }
 
 .infoName {
-  overflow: hidden;
-  font-size: 1.1rem;
-  color: #222;
-  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600; /* Bold for emphasis */
+  color: #222; /* Dark neutral color */
+  margin-bottom: 0.5rem;
+  text-transform: capitalize; /* Elegant, capitalized text */
 }
 
+.infoPrice {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333; /* Slightly lighter for contrast */
+  margin-bottom: 0.75rem; /* Add spacing after the price */
+}
 
+/* Button Styling */
+.product .buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space out buttons */
+  margin-top: 1rem;
+}
+
+.product .buttonGroup button {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none; /* Remove default border */
+}
+
+.product .buttonGroup button:hover {
+  background-color: #333; /* Darker background on hover */
+  transform: scale(1.05); /* Slight zoom effect on buttons */
+}
+
+/* Additional Utility */
+.productInfo > p {
+  margin: 0;
+}

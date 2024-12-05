@@ -1,58 +1,101 @@
+/* General modal styling */
+.modalIn {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background for a soft, neutral look */
+  border-radius: 10px;
+  max-width: 500px;  /* Adjusted width for consistency */
+  margin: 0 auto;
+  box-shadow: none; /* Removed shadow */
+  width: 100%;
+}
 
+/* Label styling for the review and stars */
+.modalIn label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 
-  .modalIn label {
-    display: block;
-    margin-bottom: 10px;
-  }
+/* Review textarea styling */
+.modalIn textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+  font-size: 1rem;
+}
 
-   .modalIn textarea {
-    width: 100%;
-    height: 100px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-    resize: none;
-  }
+/* Stars display container */
+.stars {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
 
-  .modalIn input[type="number"] {
-    width: 50px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+/* Individual star icon styling (more minimalist) */
+.star {
+  font-size: 18px; /* Smaller star size */
+  color: transparent; /* Stars are initially transparent */
+  border: 2px solid #000; /* Thin black border */
+  padding: 2px; /* Reduced padding for sleeker stars */
+  transition: all 0.3s ease; /* Smooth transition for hover and selected states */
+}
 
-  }
+/* Selected (filled) star styling */
+.star.fas {
+  color: #000; /* Black color when selected */
+  background-color: transparent; /* Keep background transparent for minimalistic look */
+}
 
-  .modalIn .error {
-    color: red;
-    margin-top: 5px;
-  }
+/* Hover effect for the stars */
+.star:hover {
+  color: #777; /* Light gray on hover */
+  background-color: transparent; /* Keep transparent background */
+}
 
-  .modalIn .submitButtonReview:disabled {
-    background-color: #8f8f8f;
-    color: #7f7f7f;
-    cursor: not-allowed;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    width: 100%;
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
 
-  }
+/* Submit button styling */
+.submitButtonReview {
+  background-color: #5bc0de;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
 
-  .modalIn .submitButtonReview {
-    background-color: #5bc0de;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-  }
+.submitButtonReview:disabled {
+  background-color: #8f8f8f;
+  color: #7f7f7f;
+  cursor: not-allowed;
+}
+
+/* Modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

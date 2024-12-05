@@ -1,19 +1,20 @@
 /* Container for the review section */
 .review-container {
   padding: 20px;
-  background-color: #f9f9f9; /* Light gray background for a soft, neutral look */
+  background-color: #f9f9f9; /* Soft gray background for a neutral, pleasant feel */
   border-radius: 10px;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: none; /* Removed shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 /* Name of the reviewer */
 .name {
   font-weight: bold;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Slightly larger name for better prominence */
   margin-bottom: 5px;
+  text-transform: capitalize; /* For polished appearance */
 }
 
 /* Date of the review */
@@ -29,8 +30,12 @@
   white-space: pre-line;
   color: #444;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6; /* Adjusted line-height for easier readability */
   margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff; /* White background for the review text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow around reviews */
 }
 
 /* Divider line between reviews */
@@ -45,9 +50,10 @@
   text-align: center;
   font-size: 1.2rem;
   color: #888;
+  margin-top: 20px;
 }
 
-/* Improved message for when there are no reviews */
+/* Message when there are no reviews */
 .noReviewsMessage {
   text-align: center;
   font-size: 1rem;
@@ -55,4 +61,5 @@
   padding: 10px;
   background-color: transparent; /* No background */
   border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Subtle border for a clean look */
 }

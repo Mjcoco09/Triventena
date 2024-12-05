@@ -1,16 +1,26 @@
+/* Product Home Screen Styles */
+.homeScreen {
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+/* Page Title */
+.homeTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000; /* Bold black text for emphasis */
+  text-align: center; /* Centering for a clean look */
+  margin-bottom: 2rem;
+}
+
+/* Product Grid */
 .homeProducts {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.homeTitle {
-  margin-left: 8px;
-  margin-bottom: 1rem;
-  color: black;
-  font-size: 1.5rem;
-}
-
-.homeScreen {
-  margin: 1rem auto;
-  max-width: 1200px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 1.5rem; /* Balanced spacing between items */
+  padding: 0 10px;
 }

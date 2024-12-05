@@ -1,11 +1,11 @@
 import { csrfFetch } from "./csrf";
-export const ADD_WISH = "ADD_TO_WISH"
-export const DELETE_WISH = "Delete_WISH"
+export const ADD_WISH = "ADD_TO_WISH";
+export const DELETE_WISH = "Delete_WISH";
 
 const addToWishAction = (payload) => ({
-    type:ADD_WISH,
-    payload,
-})
+  type: ADD_WISH,
+  payload,
+});
 
 export const addToWishThunk = (id) => async (dispatch,getState) => {
     const res = await csrfFetch(`/api/products/${id}`);
@@ -25,6 +25,8 @@ export const addToWishThunk = (id) => async (dispatch,getState) => {
       localStorage.setItem("wish", JSON.stringify(getState().cart.cartItems));
 }
 
+
+
 export const removeWish = (id) => (dispatch, getState) => {
     dispatch({
       type: DELETE_WISH,
@@ -33,40 +35,41 @@ export const removeWish = (id) => (dispatch, getState) => {
 
     localStorage.setItem("wish", JSON.stringify(getState().cart.cartItems));
   };
-  const initialState = {
-    wishItems: [],
-  };
-  export const wishlistReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case ADD_WISH: {
-        const item = action.payload;
 
-        const exists = state.wishItems.find(
-          (ele) => ele.product === item.product
-        );
-        if (exists) {
-          return {
-            ...state,
-            wishItems: state.wishItems.map((ele) =>
-              ele.product === exists.product ? item : ele
-            ),
-          };
-        } else {
-          return {
-            ...state,
-            wishItems: [...state.wishItems, item],
-          };
-        }
-      }
-      case DELETE_WISH:
+const initialState = {
+  wishItems: [],
+};
+export const wishlistReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_WISH: {
+      const item = action.payload;
+
+      const exists = state.wishItems.find(
+        (ele) => ele.product === item.product
+      );
+      if (exists) {
         return {
           ...state,
-          wishItems: state.wishItems.filter(
-            (ele) => ele.product !== action.payload
+          wishItems: state.wishItems.map((ele) =>
+            ele.product === exists.product ? item : ele
           ),
         };
-      default:
-        return state;
+      } else {
+        return {
+          ...state,
+          wishItems: [...state.wishItems, item],
+        };
+      }
     }
-}
+    case DELETE_WISH:
+      return {
+        ...state,
+        wishItems: state.wishItems.filter(
+          (ele) => ele.product !== action.payload
+        ),
+      };
+    default:
+      return state;
+  }
+};
 export default wishlistReducer;

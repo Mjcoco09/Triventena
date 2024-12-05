@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
 import { useModal } from "../../context/Modal";
-import "./UpdateReview.css"
+import "./UpdateReview.css";
+
 function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
   const dispatch = useDispatch();
   const { closeModal } = useModal();
@@ -11,7 +12,6 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
   const [review, setReview] = useState(initialReview);
   const [error, setError] = useState({});
 
-  const handleStarsChange = (e) => setStars(e.target.value);
   const handleReviewChange = (e) => setReview(e.target.value);
 
   useEffect(() => {
@@ -21,6 +21,10 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
     }
     setError(newErr);
   }, [review]);
+
+  const handleStarsClick = (index) => {
+    setStars(index + 1); // Set stars to index + 1 to reflect 1-based star rating
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +37,17 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
     closeModal();
   };
 
+  // Close modal when clicking outside the modal
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Edit Your Review</h2>
-      <div className="overlay">
+      <div className="overlay" onClick={handleOverlayClick}>
         <div className="modalIn" onClick={(e) => e.stopPropagation()}>
           <label>
             Review:
@@ -48,14 +59,16 @@ function UpdateReviewModal({ reviewId, initialStars, initialReview }) {
             {error.review && <p className="error">{error.review}</p>}
           </label>
           <label>
-            Stars: 
-            <input
-              type="number"
-              value={stars}
-              onChange={handleStarsChange}
-              min={1}
-              max={5}
-            />
+            Stars:
+            <div className="stars">
+              {[...Array(5)].map((_, index) => (
+                <i
+                  key={index}
+                  className={`star ${index < stars ? "fas" : "far"} fa-star`}
+                  onClick={() => handleStarsClick(index)}
+                />
+              ))}
+            </div>
           </label>
           <button
             type="submit"
