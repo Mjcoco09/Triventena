@@ -32,8 +32,3 @@ A full-stack eCommerce store built using Express.js and React.js, providing a se
 - Node.js and npm installed
 
 
-### Steps to Run Locally
-1. Clone the repository:
-
-   ```bash
-
